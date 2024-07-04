@@ -1,7 +1,7 @@
 name: Issue Workflow
 on: 
   issues: 
-    types: [opened]
+    types: [opened, edited]
 jobs:
   see-issue:
     runs-on: ubuntu-latest
@@ -9,5 +9,5 @@ jobs:
       - name: Output event Details
         run: |
           echo "A new issue was opened. Title: ${{ github.event.issue.title }}"
-          echo "See the issue in: ${{ github.event.issue.url }}"
+          echo "See the issue in: ${{ github.event.issue.html_url }}"
 

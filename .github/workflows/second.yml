@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output event Details
-        run: echo "${{ toJson(github.event) }}"
+        run: |
+          echo "A new issue was opened. Title: ${{ github.event.issue.title }}"
+          echo "See the issue in: ${{ github.event.issue.url }}"
 
